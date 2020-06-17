@@ -1,0 +1,24 @@
+Open PowerShell with administrative rights, copy and paste the below line, to enable WSL features.
+
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+After this you be asked to reboot.
+
+Change IEUser as referenced twice in the PS oneliner, to suit your desired username, then open PowerShell with administrative rights, copy and paste the line below, which will download wsl-ubuntu-1604 from microsoft and install it, read here for more info https://docs.microsoft.com/en-us/windows/wsl/install-manual
+
+mkdir C:\Users\IEUser\Documents\ubuntu\; cd C:\Users\IEUser\Documents\ubuntu\ ; curl.exe -L -o ubuntu.Appx https://aka.ms/wsl-ubuntu-1604 ; Rename-Item ubuntu.Appx ubuntu.zip ; Expand-Archive ubuntu.zip ubuntu ; del ubuntu.zip ; cd ubuntu ; .\ubuntu1604.exe
+
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: yepyepyep
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Installation successful!
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+yepyepyep@MSEDGEWIN10:~$ dir
+
+To start your ubuntu session after shutting the PC down, just open PowerShell and type in wsl press enter.
